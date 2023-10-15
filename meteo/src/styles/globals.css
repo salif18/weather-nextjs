@@ -171,6 +171,7 @@ body{
 }
 
 .weather-forecast .weather-forecast-item{
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,8 +181,13 @@ body{
     border-radius: 10px;
     padding: 15px;
     background: rgb(0, 0, 0,0.2);
+    transition: all 0.3s ease;
+    
 }
 
+.weather-forecast-item:hover{
+    transform: scale(1.1);
+}
 .weather-forecast-item .day{
     padding: 5px 15px;
     background: #3c3c44;
@@ -201,7 +207,8 @@ body{
     50% {
         background-image: url('https://img.apmcdn.org/6d4e6a9c446a6a38b476fe623f6e6e4fcf29b247/widescreen/d2b667-20220602-rt06112021mpls-webp2000.webp');
     }
-    50%{
+    90%{
         background-image: url('https://lh5.googleusercontent.com/p/AF1QipOolXOIofVys6zdtqajNPzVgYFk8T95tZfmaqRO=s1600');
     }
+    
 }
