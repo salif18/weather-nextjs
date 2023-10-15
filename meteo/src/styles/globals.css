@@ -48,11 +48,13 @@
 }
 /* https://img.apmcdn.org/6d4e6a9c446a6a38b476fe623f6e6e4fcf29b247/widescreen/d2b667-20220602-rt06112021mpls-webp2000.webp */
 body{
-    background-image: url('https://img.apmcdn.org/6d4e6a9c446a6a38b476fe623f6e6e4fcf29b247/widescreen/d2b667-20220602-rt06112021mpls-webp2000.webp');
+    /* background-image: url('https://cdn.24.co.za/files/Cms/General/d/8257/93814fdf48d941b2a130e23a2bbac9a4.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     font-family: 'Poppins',sans-serif;
+    transition: all 0.8s ease;
+    animation: backgroundChange 20s  linear infinite;
 }
 
 .container{
@@ -85,6 +87,7 @@ body{
 
 .place-container{
     text-align: end;
+    margin-bottom: 20px;
 }
 
 .place-container .time-zone{
@@ -112,6 +115,44 @@ body{
     justify-content: space-between;
 }
 
+.current-temp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.today{
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.397);
+}
+
+.today h2{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+.today .day{
+    padding: 5px 15px;
+    background: #3c3c44;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.today .temp{
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.today .other{
+    margin: 20px;
+}
+
 .future-forecast{
     width: 100%;
     display: flex;
@@ -124,26 +165,6 @@ body{
     color: #fff;
 }
 
-.future-forecast .today{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.future-forecast .today .day{
-    padding: 5px 15px;
-    background: #3c3c44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.future-forecast .today .temp{
-    font-size: 16px;
-    padding-top: 15px;
-}
 
 .future-forecast .weather-forecast{
     display: flex;
@@ -170,4 +191,17 @@ body{
 
 .weather-forecast-item .temp{
     font-weight: 100;
+}
+
+/* changer le fond background image */
+@keyframes backgroundChange {
+    0%, 100% {
+        background-image: url('https://cdn.24.co.za/files/Cms/General/d/8257/93814fdf48d941b2a130e23a2bbac9a4.jpg');
+    }
+    50% {
+        background-image: url('https://img.apmcdn.org/6d4e6a9c446a6a38b476fe623f6e6e4fcf29b247/widescreen/d2b667-20220602-rt06112021mpls-webp2000.webp');
+    }
+    50%{
+        background-image: url('https://lh5.googleusercontent.com/p/AF1QipOolXOIofVys6zdtqajNPzVgYFk8T95tZfmaqRO=s1600');
+    }
 }

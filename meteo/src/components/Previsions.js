@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React from 'react';
 
-const Weather = ({day}) => {
+const Previsions = ({day}) => {
     
     return (
         <article className='weather-forecast-item'>
@@ -15,4 +15,4 @@ const Weather = ({day}) => {
     );
 }
 
-export default Weather;
+export default Previsions;

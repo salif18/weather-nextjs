@@ -1,8 +1,8 @@
 import React from "react";
 import moment from "moment";
 
-const CurrentInfo = ({ currentTimes, currentDate, ampm, currentObject }) => {
-  const { humidity, pressure, sunrise, sunset, wind_speed } = currentObject;
+const PrevisionsDetails = ({ currentTimes, currentDate, ampm, currentObject }) => {
+  const { humidity, pressure, sunrise, sunset, wind_speed ,visibility,temp} = currentObject;
   return (
     <article className="date-container">
       <section className="time">
@@ -16,19 +16,27 @@ const CurrentInfo = ({ currentTimes, currentDate, ampm, currentObject }) => {
           <div>{humidity}%</div>
         </div>
         <div className="weather-item">
-          <div>Pression</div>
+          <div>Préssion</div>
           <div>{pressure}%</div>
+        </div>
+        <div className="weather-item">
+          <div>Visibilité</div>
+          <div>{visibility}</div>
+        </div>
+        <div className="weather-item">
+          <div>Temps</div>
+          <div>{temp}</div>
         </div>
         <div className="weather-item">
           <div>Vitesse du vent</div>
           <div>{wind_speed}%</div>
         </div>
         <div className="weather-item">
-          <div>Lever du soleil</div>
+          <div>Lévée du soleil</div>
           <div>{moment(sunrise * 1000).format("HH:mm a")}</div>
         </div>
         <div className="weather-item">
-          <div>Coucher du soleil</div>
+          <div>Couché du soleil</div>
           <div>{moment(sunset * 1000).format("HH:mm a")}</div>
         </div>
       </section>
@@ -36,4 +44,4 @@ const CurrentInfo = ({ currentTimes, currentDate, ampm, currentObject }) => {
   );
 };
 
-export default CurrentInfo;
+export default PrevisionsDetails;

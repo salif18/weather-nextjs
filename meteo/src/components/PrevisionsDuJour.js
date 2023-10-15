@@ -1,9 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-const CurrentTemp = ({day}) => {
+const PrevisionsDuJour = ({day}) => {
+    
     return (
         <article className='today'>
             <figure>
+            <h2>Prévision du jour</h2>
             <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} className='w-icon' alt='weather icon' />
             </figure>
             <section className='other'>
@@ -15,4 +17,4 @@ const CurrentTemp = ({day}) => {
     );
 }
 
-export default CurrentTemp;
+export default PrevisionsDuJour;

@@ -1,7 +1,7 @@
 "use client";
-import CurrentInfo from "@/src/components/CurrentInfo";
-import CurrentTemp from "@/src/components/CurrentTemp";
-import Weather from "@/src/components/Weather";
+import PrevisionsDetails from "@/src/components/PrevisionsDetails";
+import PrevisionsDuJour from "@/src/components/PrevisionsDuJour";
+import Previsions from "@/src/components/Previsions";
 import Zone from "@/src/components/Zone";
 import { useState, useEffect } from "react";
 
@@ -52,7 +52,7 @@ export default function Home() {
         ":" +
         (minute < 10 ? "0" + minute : minute);
 
-      const currentDate = days[6 - day] + "," + date + " " + months[month];
+      const currentDate = days[6 - day] + "," +" "+ + date + " " + months[month];
       setCurrentDateTime({ currentDate, currentTimes, ampm });
     };
 
@@ -92,30 +92,33 @@ export default function Home() {
     <main className="app">
       <section className="container">
         <section className="current-info">
-          <CurrentInfo
+          <PrevisionsDetails
             currentDate={currentDateTime.currentDate}
             currentTimes={currentDateTime.currentTimes}
             ampm={currentDateTime.ampm}
             currentObject={currentObject}
           />
+          <section className="current-temp">
           <Zone 
             data={data}
           />
+          {
+            weatherData && 
+            weatherData.map((day, idx) => (
+             idx === 0 && <PrevisionsDuJour day={day} key={day.dt} />
+            )) 
+          }
+          </section>
         </section>
       </section>
 
       <section className="future-forecast">
-        {
-          weatherData && 
-          weatherData.map((day, idx) => (
-           idx === 0 && <CurrentTemp day={day} key={day.dt} />
-          )) 
-        }
+       
         <section className="weather-forecast">
         {
            weatherData && 
            weatherData.map((day, idx) => (
-             idx !== 0 && <Weather day={day} key={day.dt} />
+             idx !== 0 && <Previsions day={day} key={day.dt} />
            )) 
            
         }
