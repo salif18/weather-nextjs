@@ -29,7 +29,7 @@ const CurrentInfo = ({ currentTimes, currentDate, ampm, currentObject }) => {
         </div>
         <div className="weather-item">
           <div>Coucher du soleil</div>
-          <div> {moment(sunset * 1000).format("HH:mm a")}</div>
+          <div>{moment(sunset * 1000).format("HH:mm a")}</div>
         </div>
       </section>
     </article>

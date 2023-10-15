@@ -10,7 +10,7 @@ const Weather = ({day}) => {
            <img className="w-icon" src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather icon" />
         </figure>
         
-         <section className='temp'>{(day.temp.night/10).toFixed(2)}/10&#176; C</section>
+         <section className='temp'>{(day.temp.night/10).toFixed(2)}&#176; C</section>
          <section className='temp'>{(day.temp.day/10).toFixed(2)}&#176; C</section>
         </article>
     );

@@ -108,17 +108,17 @@ export default function Home() {
         {
           weatherData && 
           weatherData.map((day, idx) => (
-          idx === 0 && <CurrentTemp day={day} key={day.dt} />
+           idx === 0 && <CurrentTemp day={day} key={day.dt} />
           )) 
         }
         <section className="weather-forecast">
-          {
+        {
            weatherData && 
            weatherData.map((day, idx) => (
              idx !== 0 && <Weather day={day} key={day.dt} />
            )) 
            
-          }
+        }
         </section>
       </section>
     </main>
